@@ -1,12 +1,14 @@
 function simulateSteadyState(pathToSave, individual_param, individual_values, common_param, common_values, ...
-                             nNodes, CL, nCLs, Idur, dt, project)
+                             nodes, CL, nCLs, Idur, dt, project)
 
 initialPath=pwd();
-sim_stat = load([pathToSave '/status.mat']);
+sim_stat = load([pathToSave '/../status.mat']);
+
+nNodes = length(nodes);
 
 if(isempty(dir(pathToSave)))
   mkdir(pathToSave)
-  copyfile([pathToSave '/base'],[pathToSave '/base'])
+  copyfile([pathToSave '/../base'],[pathToSave '/base'])
   createFileStimulus([pathToSave '/base'],[0:CL:(nCLs-1)*CL],Idur,sim_stat.IStim);
 end
 

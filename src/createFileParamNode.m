@@ -4,7 +4,7 @@ f=fopen([pathToSave '/data/file_param_node.dat'],'w');
 
 fprintf(f,[num2str(nNodes) '\n']);
 for i=1:nNodes
-  fprintf(f,[' ' num2str(i) ' ' num2str(length(param_index))
+  fprintf(f,[' ' num2str(i) ' ' num2str(length(param_index))]);
   for j=1:length(param_index)
     fprintf(f,[' ' num2str(param_index(j))])
   end
